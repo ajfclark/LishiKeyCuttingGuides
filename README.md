@@ -13,8 +13,8 @@ I've attempted to follow their geometry as much as possible, but I've removed
 the rounding and a few other details in pursuit of simplicity.
 
 The original repository's README is included
-[below](#deviant's-original-readme), for more context and attribution, and
-I've kept their original reference STLs for Schlage.
+[below](#deviants-original-readme), for more context and attribution, and I've
+kept their original reference STLs for Schlage.
 
 ## Generating guides
 
