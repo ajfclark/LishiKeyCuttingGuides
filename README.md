@@ -15,12 +15,14 @@ the rounding and a few other details in pursuit of simplicity.
 
 The original repository's README is included
 [below](#deviants-original-readme), for more context and attribution, and I've
-kept their original reference STLs for Schlage.
+kept their original reference STLs for Schlage in the [reference](reference/)
+subfolder.
 
 ## Generating guides
 
-The script `generate.bat` is used to create the guides, into the `generate`
-subfolder. I've put a few of them in there for reference.
+The script `generate.bat` is used to create the guides, into the
+[generated](generated/) subfolder. I've put a few of them in there for
+reference.
 
 As per the variable at the top of the file, the script expects OpenSCAD to be
 installed in `C:\Program Files\OpenSCAD\openscad.exe`, update that as you
@@ -36,14 +38,14 @@ Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
  - `10` is the total number of possible depths.
 
 The above numbers will generate a 10 guides for Schlage, which I've done into
-the `generated` folder.
+the [generated](generated/) folder.
 
 If you append the arguments `wide 3.96 6` at the end of the parameters, it
 will add enough indents to help you align cuts for 6 pins without using the
 `Schlage Key Marker Sleeve.stl` (the spacing will be 3.96mm, for Schlage).
 This does compromise how compact the guides are, but may work for your use
 case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
-wide 3.96 6` into the same `generated` folder.
+wide 3.96 6` into the same [generated](generated/) folder.
 
 ## Deviant's original README
 
