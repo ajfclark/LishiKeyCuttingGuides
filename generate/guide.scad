@@ -6,6 +6,8 @@ The below values are for Schlage.
 zero_cut_root_depth = 8.509;
 depth_step = 0.381;
 pin_1_from_shoulder = 5.86;
+pin_spacing = 3.96;
+total_pins = 6;
 total_depths = 10;
 depth_index = 9;
 
@@ -33,20 +35,33 @@ guide_front_length = lishi_socket_punch_length + walls*2 - zero_cut_root_depth +
 guide_front_height = key_slot_width + walls*2;
 guide_front_width = guide_back_width / 2 + pin_1_from_shoulder;
 
+guide_back_wing_width = guide_front_width+(pin_spacing*(total_pins-1))+walls*2;
+lip_length = guide_back_wing_width;
+
 // Guide back - clips to Lishi pliers.
 translate([-walls, 0, -walls*2]) difference() {
-    cube([guide_back_width, guide_back_height, guide_back_length]);
+    union() {
+        cube([guide_back_width, guide_back_height, guide_back_length]);
+        cube([guide_back_wing_width, walls*2, guide_back_length]);
+    }
     translate([walls,lishi_lip_thickness,walls*2]) cube([lishi_socket_width, guide_back_height, guide_back_length]);
+
+    // Shoulder guides.
+    for (i = [1 : total_pins-1]){
+        translate([guide_front_width+(pin_spacing * i), 0, -1]) {
+            cylinder(r=aligner_inset/2, h=guide_front_length*2);
+        }
+    }
 }
 
 // Lip.
-translate([0, 0, lishi_socket_length]) {
-    cube([lishi_socket_width, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
+translate([-walls, 0, lishi_socket_length]) {
+    cube([lip_length, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
     difference() {
         translate([0, 0, lishi_lip_length-lishi_lip_thickness]) {
-            rotate([0, 90, 0]) cylinder(h=lishi_socket_width, r=lishi_lip_thickness);
+            rotate([0, 90, 0]) cylinder(h=lip_length, r=lishi_lip_thickness);
         }
-        mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lishi_socket_width+2, lishi_lip_thickness+1, lishi_lip_length+1]);
+        mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_length+2, lishi_lip_thickness+1, lishi_lip_length+1]);
     }
 }
 
