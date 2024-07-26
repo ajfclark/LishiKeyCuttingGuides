@@ -13,10 +13,9 @@ on:
 I've attempted to follow their geometry as much as possible, but I've removed
 the rounding and a few other details in pursuit of simplicity.
 
-The original repository's README is included
-[below](#deviants-original-readme), for more context and attribution, and I've
-kept their original reference STLs for Schlage in the
-[references](references/) subfolder.
+The original repository's README is included [below](#the-original-readme),
+for more context and attribution, and I've kept their original reference STLs
+for Schlage in the [references](references/) subfolder.
 
 ## Generating guides
 
@@ -47,7 +46,7 @@ This does compromise how compact the guides are, but may work for your use
 case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
 wide 3.96 6` into the same [generated](generated/) folder.
 
-## Deviant's original README
+## The original README
 
 3D printable files for the ersatz Pak-A-Punch developed by Deviant and Tony of 3D Locksport
 
