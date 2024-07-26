@@ -1,6 +1,6 @@
 # LishiKeyCuttingGuides - Generation toolkit
 
-**NOTE: This is in development, I'll remove this banner once I've confirmed the geometry is correct**
+**NOTE: This is in development, I'll remove this banner once I've confirmed the geometry is absolutely correct.**
 
 This is a version of Deviant and Tony's [original
 work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
@@ -35,7 +35,15 @@ Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
  - `5.86` is the distance from pin 1 to the shoulder, in mm.
  - `10` is the total number of possible depths.
 
-The above numbers will generate a 10 guides for Schlage.
+The above numbers will generate a 10 guides for Schlage, which I've done into
+the `generated` folder.
+
+If you append the arguments `wide 3.96 6` at the end of the parameters, it
+will add enough indents to help you align cuts for 6 pins without using the
+`Schlage Key Marker Sleeve.stl` (the spacing will be 3.96mm, for Schlage).
+This does compromise how compact the guides are, but may work for your use
+case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
+wide 3.96 6` into the same `generated` folder.
 
 ## Deviant's original README
 
