@@ -15,8 +15,8 @@ the rounding and a few other details in pursuit of simplicity.
 
 The original repository's README is included
 [below](#deviants-original-readme), for more context and attribution, and I've
-kept their original reference STLs for Schlage in the [reference](reference/)
-subfolder.
+kept their original reference STLs for Schlage in the
+[references](references/) subfolder.
 
 ## Generating guides
 
