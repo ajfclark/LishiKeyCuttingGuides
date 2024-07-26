@@ -24,7 +24,7 @@ subfolder. I've put a few of them in there for reference.
 As per the variable at the top of the file, the script expects OpenSCAD to be
 installed in `C:\Program Files\OpenSCAD\openscad.exe`, update that as you
 need. On Linux you'll need to do your own version of generate.bat as a shell
-script.
+script (**I'll get to this :)**).
 
 Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
 
