@@ -19,5 +19,5 @@ for /L %%D IN (0,1,%loop_end%) DO (
         -D "pin_1_from_shoulder=%pin_1_from_shoulder%" ^
         -D "total_depths=%total_depths%" ^
         -D "depth_index=%%D" ^
-        -o "%model% Cutter Guide - %%D.stl" guide.scad
+        -o "generated\%model% Cutter Guide - %%D.stl" guide.scad
 )
