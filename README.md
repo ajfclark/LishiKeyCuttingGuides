@@ -1,6 +1,6 @@
 # LishiKeyCuttingGuides - Generation toolkit
 
-**NOTE: This is in development, I'll remove this banner once I've confirmed the geometry is correct**
+**NOTE: This is in development, I'll remove this banner once I've confirmed the geometry is absolutely correct.**
 
 This is a version of Deviant and Tony's [original
 work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
@@ -8,18 +8,31 @@ on:
 
  - Providing a toolkit for generating guides for other formats
  - More reliable 3D printing on less reliable 3D printers
+ - An optional additional guide for pin positions
 
 I've attempted to follow their geometry as much as possible, but I've removed
 the rounding and a few other details in pursuit of simplicity.
 
-The original repository's README is included
-[below](#deviants-original-readme), for more context and attribution, and I've
-kept their original reference STLs for Schlage.
+The original repository's README is included [below](#the-original-readme),
+for more context and attribution, and I've kept their original reference STLs
+for Schlage in the [references](references/) subfolder.
+
+## Images
+
+These two images are the default and wide-mode generated versions (for 6-pin
+Schlage, as above):
+
+![](img/generated.png) ![](img/generated-wide.png)
+
+And this is an example of the original reference STLs:
+
+![](img/reference.png)
 
 ## Generating guides
 
-The script `generate.bat` is used to create the guides, into the `generate`
-subfolder. I've put a few of them in there for reference.
+The script `generate.bat` is used to create the guides, into the
+[generated](generated/) subfolder. I've put a few of them in there for
+reference.
 
 As per the variable at the top of the file, the script expects OpenSCAD to be
 installed in `C:\Program Files\OpenSCAD\openscad.exe`, update that as you
@@ -34,9 +47,17 @@ Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
  - `5.86` is the distance from pin 1 to the shoulder, in mm.
  - `10` is the total number of possible depths.
 
-The above numbers will generate a 10 guides for Schlage.
+The above numbers will generate a 10 guides for Schlage, which I've done into
+the [generated](generated/) folder.
 
-## Deviant's original README
+If you append the arguments `wide 3.96 6` at the end of the parameters, it
+will add enough indents to help you align cuts for 6 pins without using the
+`Schlage Key Marker Sleeve.stl` (the spacing will be 3.96mm, for Schlage).
+This does compromise how compact the guides are, but may work for your use
+case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
+wide 3.96 6` into the same [generated](generated/) folder.
+
+## The original README
 
 3D printable files for the ersatz Pak-A-Punch developed by Deviant and Tony of 3D Locksport
 
