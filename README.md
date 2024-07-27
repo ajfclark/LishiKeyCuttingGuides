@@ -17,6 +17,16 @@ The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs
 for Schlage in the [references](references/) subfolder.
 
+## Images
+
+These two images are the original and wide-mode versions:
+
+![](img/generated.png) ![](img/generated-wide.png)
+
+And this is an example of the original reference STLs:
+
+![](img/reference.png)
+
 ## Generating guides
 
 The script `generate.bat` is used to create the guides, into the
