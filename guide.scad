@@ -36,7 +36,7 @@ guide_front_height = key_slot_width + walls*2;
 guide_front_width = guide_back_width / 2 + pin_1_from_shoulder;
 
 guide_back_wing_width = guide_front_width+(pin_spacing*(total_pins-1))+walls*2;
-lip_length = guide_back_wing_width;
+lip_width = guide_back_wing_width;
 
 // Guide back - clips to Lishi pliers.
 translate([-walls, 0, -walls*2]) difference() {
@@ -56,12 +56,12 @@ translate([-walls, 0, -walls*2]) difference() {
 
 // Lip.
 translate([-walls, 0, lishi_socket_length]) {
-    cube([lip_length, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
+    cube([lip_width, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
     difference() {
         translate([0, 0, lishi_lip_length-lishi_lip_thickness]) {
-            rotate([0, 90, 0]) cylinder(h=lip_length, r=lishi_lip_thickness);
+            rotate([0, 90, 0]) cylinder(h=lip_width, r=lishi_lip_thickness);
         }
-        mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_length+2, lishi_lip_thickness+1, lishi_lip_length+1]);
+        mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+1]);
     }
 }
 
