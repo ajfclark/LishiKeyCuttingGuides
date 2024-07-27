@@ -57,6 +57,12 @@ This does compromise how compact the guides are, but may work for your use
 case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
 wide 3.96 6` into the same [generated](generated/) folder.
 
+## TODOs
+
+ - [ ] Bash script generation
+ - [ ] Example command lines for proven configurations
+ - [ ] Decide on zero cut or not
+
 ## The original README
 
 3D printable files for the ersatz Pak-A-Punch developed by Deviant and Tony of 3D Locksport
