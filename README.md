@@ -19,7 +19,7 @@ for Schlage in the [references](references/) subfolder.
 
 ## Images
 
-These two images are the original and wide-mode versions:
+These two images are the default and wide-mode generated versions:
 
 ![](img/generated.png) ![](img/generated-wide.png)
 
