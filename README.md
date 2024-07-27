@@ -7,8 +7,8 @@ work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
 on:
 
  - Providing a toolkit for generating guides for other formats
- - More reliable 3D printing on less reliable 3D printers
- - An optional additional guide for pin positions
+ - Simpler geometry for more reliable 3D printing on less reliable 3D printers
+ - An optional "wide" mode including a guide to help locate the shoulder for each pin
 
 I've attempted to follow their geometry as much as possible, but I've removed
 the rounding and a few other details in pursuit of simplicity.
