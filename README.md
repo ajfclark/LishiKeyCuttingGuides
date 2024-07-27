@@ -19,7 +19,8 @@ for Schlage in the [references](references/) subfolder.
 
 ## Images
 
-These two images are the default and wide-mode generated versions:
+These two images are the default and wide-mode generated versions (for 6-pin
+Schlage, as above):
 
 ![](img/generated.png) ![](img/generated-wide.png)
 
