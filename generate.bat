@@ -19,7 +19,7 @@ cd %~dp0
 if /I "%wide_mode%" EQU "wide" GOTO wide
 
 :: Default mode.
-for /L %%D IN (0,1,%loop_end%) DO (
+for /L %%D IN (1,1,%loop_end%) DO (
     "%openscad%" ^
         -D "zero_cut_root_depth=%zero_cut_root_depth%" ^
         -D "depth_step=%depth_step%" ^
@@ -33,7 +33,7 @@ goto :eof
 
 :: Wide mode.
 :wide
-for /L %%D IN (0,1,%loop_end%) DO (
+for /L %%D IN (1,1,%loop_end%) DO (
     "%openscad%" ^
         -D "zero_cut_root_depth=%zero_cut_root_depth%" ^
         -D "depth_step=%depth_step%" ^

@@ -7,7 +7,7 @@ work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
 on:
 
  - Providing a toolkit for generating guides for other formats
- - Simpler geometry for more reliable 3D printing on less reliable 3D printers
+ - More forgiving geometry for cheaper 3D printers
  - An optional "wide" mode including a guide to help locate the shoulder for each pin
 
 I've attempted to follow their geometry as much as possible, but I've removed
@@ -63,7 +63,6 @@ the guides are, but may work for your use case. I've included the output of
 
  - [ ] Bash script generation
  - [ ] Example command lines for proven configurations
- - [ ] Decide on zero cut or not
 
 ## The original README
 
