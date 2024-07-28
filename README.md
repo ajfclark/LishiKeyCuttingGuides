@@ -15,7 +15,8 @@ the rounding and a few other details in pursuit of simplicity.
 
 The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs
-for Schlage in the [references](references/) subfolder.
+for Schlage in the [references](references/) subfolder, along with the Schlage
+marker sleeve for pin positions.
 
 ## Images
 
@@ -52,10 +53,11 @@ the [generated](generated/) folder.
 
 If you append the arguments `wide 3.96 6` at the end of the parameters, it
 will add enough indents to help you align cuts for 6 pins without using the
-`Schlage Key Marker Sleeve.stl` (the spacing will be 3.96mm, for Schlage).
-This does compromise how compact the guides are, but may work for your use
-case. I've included the output of `generate.bat Schlage 8.509 0.381 5.86 10
-wide 3.96 6` into the same [generated](generated/) folder.
+[Schlage Marker Sleeve.stl](references/Schlage%20Key%20Marker%20Sleeve.stl)
+(the spacing will be 3.96mm, for Schlage). This does compromise how compact
+the guides are, but may work for your use case. I've included the output of
+`generate.bat Schlage 8.509 0.381 5.86 10 wide 3.96 6` into the same
+[generated](generated/) folder.
 
 ## TODOs
 
