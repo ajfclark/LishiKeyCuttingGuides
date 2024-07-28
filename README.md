@@ -10,9 +10,6 @@ on:
  - More forgiving geometry for cheaper 3D printers
  - An optional "wide" mode including a guide to help locate the shoulder for each pin
 
-I've attempted to follow their geometry as much as possible, but I've removed
-the rounding and a few other details in pursuit of simplicity.
-
 The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs
 for Schlage in the [references](references/) subfolder, along with the Schlage
