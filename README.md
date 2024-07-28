@@ -31,6 +31,8 @@ And this is an example of the original reference STLs:
 
 ## Generating guides
 
+### Windows
+
 The script `generate.bat` is used to create the guides, into the
 [generated](generated/) subfolder. I've put a few of them in there for
 reference.
@@ -59,9 +61,12 @@ the guides are, but may work for your use case. I've included the output of
 `generate.bat Schlage 8.509 0.381 5.86 10 wide 3.96 6` into the same
 [generated](generated/) folder.
 
+### Linux
+
+As above, but with ./generate.sh ...
+
 ## TODOs
 
- - [ ] Bash script generation
  - [ ] Example command lines for proven configurations
 
 ## The original README
