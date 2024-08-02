@@ -71,8 +71,8 @@ As above, but with ./generate.sh ...
 
 ## Known good configurations
 
- - Schlage: `Schlage 8.509 0.381 5.86 10 0`
- - Kwikset: `Kwikset 8.8 0.59 6.27 8 1`
+ - Schlage: `Schlage 8.509 0.381 5.86 10 0` + `wide 3.96 6`
+ - Kwikset: `Kwikset 8.8 0.59 6.27 8 1` + `wide 3.81 6`
 
 ## The original README
 
