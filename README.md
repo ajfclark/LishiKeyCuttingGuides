@@ -65,6 +65,8 @@ As above, but with ./generate.sh ...
 ## TODOs
 
  - [ ] Example command lines for proven configurations
+ - [ ] Finger hook to remove?
+ - [ ] Horizontal cut to help keep key aligned with pin 6 etc?
 
 ## The original README
 
