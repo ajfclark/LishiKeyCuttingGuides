@@ -68,6 +68,7 @@ As above, but with ./generate.sh ...
  - [ ] Example command lines for proven configurations
  - [ ] Finger hook to remove?
  - [ ] Horizontal cut to help keep key aligned with pin 6 etc?
+ - [ ] Set file name to match depth code, instead of zero-based depth index.
 
 ## The original README
 
