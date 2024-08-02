@@ -38,7 +38,7 @@ As per the variable at the top of the file, the script expects OpenSCAD to be
 installed in `C:\Program Files\OpenSCAD\openscad.exe`, update that as you
 need.
 
-Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
+Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10 0` where:
 
  - `Schlage` is the key name/label for output files etc.
  - `8.509` is the zero cut height, in mm.
