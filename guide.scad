@@ -8,6 +8,7 @@ depth_step = 0.381;
 pin_1_from_shoulder = 5.86;
 total_depths = 10;
 depth_index = 9;
+zero_cut_number = 0;
 
 /*
 Additional command line settings if generating wide version.
@@ -89,5 +90,5 @@ translate([-walls, 0, -walls*2]) difference() {
     translate([-5, -key_slot_width, bar_push]) cube([lishi_socket_width*2, key_slot_width+1, 30]);
 
     // Number.
-    translate([guide_front_width/2, -guide_front_height+0.5, 2]) rotate([-90, 0, 180]) linear_extrude(1) text(str(depth_index), size=6, font="Arial", halign="center", valign="top");
+    translate([guide_front_width/2, -guide_front_height+0.5, 2]) rotate([-90, 0, 180]) linear_extrude(1) text(str(depth_index+zero_cut_number), size=6, font="Arial", halign="center", valign="top");
 }
