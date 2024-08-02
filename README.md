@@ -69,10 +69,6 @@ As above, but with ./generate.sh ...
  - Schlage: `Schlage 8.509 0.381 5.86 10`
  - Kwikset: `Kwikset 8.8 0.59 6.27 8`
 
-## TODOs
-
- - [ ] Example command lines for proven configurations
-
 ## The original README
 
 3D printable files for the ersatz Pak-A-Punch developed by Deviant and Tony of 3D Locksport
