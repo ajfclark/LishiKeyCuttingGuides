@@ -64,6 +64,11 @@ the guides are, but may work for your use case. I've included the output of
 
 As above, but with ./generate.sh ...
 
+## Known good configurations
+
+ - Schlage: `Schlage 8.509 0.381 5.86 10`
+ - Kwikset: `Kwikset 8.8 0.59 6.27 8`
+
 ## TODOs
 
  - [ ] Example command lines for proven configurations
