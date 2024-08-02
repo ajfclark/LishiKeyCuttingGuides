@@ -49,8 +49,9 @@ Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
  - `5.86` is the distance from pin 1 to the shoulder, in mm.
  - `10` is the total number of possible depths, including zero-cut.
 
-The above numbers will generate 9 guides for Schlage, which I've done into
-the [generated](generated/) folder.
+The above numbers will generate 9 guides for Schlage, which I've done into the
+[generated](generated/) folder. The zero cut is not generated because it's
+very hard to correctly cut.
 
 If you append the arguments `wide 3.96 6` at the end of the parameters, it
 will add enough indents to help you align cuts for 6 pins without using the
