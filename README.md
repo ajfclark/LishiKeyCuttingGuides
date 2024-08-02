@@ -10,9 +10,6 @@ on:
  - More forgiving geometry for cheaper 3D printers
  - An optional "wide" mode including a guide to help locate the shoulder for each pin
 
-I've attempted to follow their geometry as much as possible, but I've removed
-the rounding and a few other details in pursuit of simplicity.
-
 The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs
 for Schlage in the [references](references/) subfolder, along with the Schlage
@@ -50,8 +47,9 @@ Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
  - `10` is the total number of possible depths, including the zero cut.
  - `0` is the numeric code for the zero cut.
 
-The above numbers will generate 9 guides for Schlage, which I've done into
-the [generated](generated/) folder.
+The above numbers will generate 9 guides for Schlage, which I've done into the
+[generated](generated/) folder. The zero cut is not generated because it's
+very hard to correctly cut.
 
 If you append the arguments `wide 3.96 6` at the end of the parameters, it
 will add enough indents to help you align cuts for 6 pins without using the
