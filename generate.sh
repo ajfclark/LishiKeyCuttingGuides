@@ -23,6 +23,7 @@ if [[ "$wide_mode" != "wide" ]]; then
             -D "depth_step=$depth_step" \
             -D "pin_1_from_shoulder=$pin_1_from_shoulder" \
             -D "total_depths=$total_depths" \
+            -D "zero_cut_number=$zero_cut_number" \
             -D "depth_index=$i" \
             -o "generated/$model Cutter Guide - $i.stl" guide.scad
     done
@@ -34,6 +35,7 @@ else
             -D "depth_step=$depth_step" \
             -D "pin_1_from_shoulder=$pin_1_from_shoulder" \
             -D "total_depths=$total_depths" \
+            -D "zero_cut_number=$zero_cut_number" \
             -D "depth_index=$i" \
             -D "wide_mode=true" \
             -D "pin_spacing=$pin_spacing" \
