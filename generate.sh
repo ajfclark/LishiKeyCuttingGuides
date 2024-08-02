@@ -5,10 +5,11 @@ zero_cut_root_depth=$2
 depth_step=$3
 pin_1_from_shoulder=$4
 total_depths=$5
+zero_cut_number=$6
 
-wide_mode=$6
-pin_spacing=$7
-total_pins=$8
+wide_mode=$7
+pin_spacing=$8
+total_pins=$9
 
 loop_end=$((total_depths-1))
 

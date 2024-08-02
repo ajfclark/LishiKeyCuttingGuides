@@ -7,10 +7,11 @@ set zero_cut_root_depth=%2
 set depth_step=%3
 set pin_1_from_shoulder=%4
 set total_depths=%5
+set zero_cut_number=%6
 
-set wide_mode=%6
-set pin_spacing=%7
-set total_pins=%8
+set wide_mode=%7
+set pin_spacing=%8
+set total_pins=%9
 
 set /a loop_end=%5-1
 

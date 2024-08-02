@@ -44,10 +44,11 @@ need.
 Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10` where:
 
  - `Schlage` is the key name/label for output files etc.
- - `8.509` is the zero-cut height, in mm.
+ - `8.509` is the zero cut height, in mm.
  - `0.381` is the size of each step in depth, in mm.
  - `5.86` is the distance from pin 1 to the shoulder, in mm.
- - `10` is the total number of possible depths, including zero-cut.
+ - `10` is the total number of possible depths, including the zero cut.
+ - `0` is the numeric code for the zero cut.
 
 The above numbers will generate 9 guides for Schlage, which I've done into
 the [generated](generated/) folder.
@@ -57,7 +58,7 @@ will add enough indents to help you align cuts for 6 pins without using the
 [Schlage Marker Sleeve.stl](references/Schlage%20Key%20Marker%20Sleeve.stl)
 (the spacing will be 3.96mm, for Schlage). This does compromise how compact
 the guides are, but may work for your use case. I've included the output of
-`generate.bat Schlage 8.509 0.381 5.86 10 wide 3.96 6` into the same
+`generate.bat Schlage 8.509 0.381 5.86 10 0 wide 3.96 6` into the same
 [generated](generated/) folder.
 
 ### Linux
