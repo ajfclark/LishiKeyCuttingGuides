@@ -30,7 +30,7 @@ $fn = 30;
 walls = 1;
 key_slot_width = 2.25;
 cover_overlap = 2;
-aligner_inset = 0.75;
+aligner_inset = 1;
 
 // Derived dimensions
 guide_back_width = lishi_socket_width + walls*2;
@@ -43,38 +43,42 @@ guide_front_width = guide_back_width / 2 + pin_1_from_shoulder;
 
 lip_width = guide_back_width;
 
-guide_back_wing_width = guide_front_width+(pin_spacing*(total_pins-1))+walls*2;
+guide_back_wing_width = guide_front_width+(pin_spacing*(total_pins-1))+walls*3 - guide_back_width;
+guide_back_wing_length = guide_back_length + zero_cut_root_depth + 5;
 shoulder_line = aligner_inset / 3;
 
-// Guide back - clips to Lishi pliers.
-translate([-walls, 0, -walls*2]) difference() {
+difference() {
     union() {
-        cube([guide_back_width, guide_back_height, guide_back_length]);
-        if (wide_mode) {
-            cube([guide_back_wing_width, walls*2, guide_back_length]);
+        // Guide back - clips to Lishi pliers.
+        translate([-walls, 0, -walls*2]) difference() {
+            union() {
+                cube([guide_back_width, guide_back_height, guide_back_length]);
+                if (wide_mode) {
+                    translate([guide_back_width-walls, 0, 0]) cube([guide_back_wing_width, walls*2, guide_back_wing_length]);
+                }
+            }
+
+            translate([walls,lishi_lip_thickness,walls*2]) cube([lishi_socket_width, guide_back_height, guide_back_length]);
         }
-    }
 
-    translate([walls,lishi_lip_thickness,walls*2]) cube([lishi_socket_width, guide_back_height, guide_back_length]);
-
-    // Shoulder guides.
-    if (wide_mode) {
-        for (i = [1 : total_pins-1]){
-            translate([guide_front_width+(pin_spacing * i), 0, -walls]) {
-                cylinder(d=shoulder_line, h=guide_back_length);
+        // Lip.
+        translate([-walls, 0, lishi_socket_length]) {
+            cube([lip_width, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
+            difference() {
+                translate([0, 0, lishi_lip_length-lishi_lip_thickness]) {
+                    rotate([0, 90, 0]) cylinder(h=lip_width, r=lishi_lip_thickness);
+                }
+                mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+1]);
             }
         }
     }
-}
-
-// Lip.
-translate([-walls, 0, lishi_socket_length]) {
-    cube([lip_width, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
-    difference() {
-        translate([0, 0, lishi_lip_length-lishi_lip_thickness]) {
-            rotate([0, 90, 0]) cylinder(h=lip_width, r=lishi_lip_thickness);
+    // Shoulder guides.
+    translate([-walls, 0, -walls*2]) if (wide_mode) {
+        for (i = [1 : total_pins-1]){
+            translate([guide_front_width+(pin_spacing * i), 0, -walls]) {
+                cylinder(d=shoulder_line, h=guide_back_wing_length+walls*2);
+            }
         }
-        mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+1]);
     }
 }
 
