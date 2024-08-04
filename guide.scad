@@ -23,13 +23,13 @@ lishi_socket_height = 5;
 lishi_socket_length = 10;
 lishi_lip_length = 2.25;
 lishi_lip_thickness = 1;
-lishi_socket_punch_length = 15.1;
+lishi_socket_punch_length = 13.415;
 
 // Guide config.
 $fn = 30;
 walls = 1;
 key_slot_width = 2.25;
-cover_overlap = 2;
+cover_overlap = 2.14;
 aligner_inset = 1;
 
 // Derived dimensions
