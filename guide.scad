@@ -21,9 +21,9 @@ total_pins = 6;
 lishi_socket_width = 18 + 0.4;  // 0.4 from my printer, you may need to tweak.
 lishi_socket_height = 5;
 lishi_socket_length = 10;
-lishi_lip_length = 2.25;
-lishi_lip_thickness = 1;
-lishi_socket_punch_length = 13.415;
+lishi_lip_length = 2;
+lishi_lip_thickness = 1.2;
+lishi_socket_punch_length = 13.415;  // Tip of punch to end of lishi.
 
 // Guide config.
 $fn = 30;
@@ -68,7 +68,7 @@ difference() {
                 translate([0, 0, lishi_lip_length-lishi_lip_thickness]) {
                     rotate([0, 90, 0]) cylinder(h=lip_width, r=lishi_lip_thickness);
                 }
-                mirror([0, 1, 0]) translate([-1, 0, 0]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+1]);
+                mirror([0, 1, 0]) translate([-1, 0, -lishi_lip_thickness]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+lishi_lip_thickness]);
             }
         }
     }
