@@ -12,7 +12,9 @@ set zero_cut_number=%7
 
 set wide_mode=%8
 set pin_spacing=%9
-set total_pins=%10
+
+shift
+set total_pins=%9
 
 set /a loop_end=%total_depths-1
 
