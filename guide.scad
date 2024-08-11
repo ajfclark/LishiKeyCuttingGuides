@@ -3,6 +3,7 @@ Command line config settings, for the key type, overridden by generate.bat
 
 The below default values are for Schlage.
 */
+tab_side = "left";
 zero_cut_root_depth = 8.509;
 depth_step = 0.381;
 pin_1_from_shoulder = 5.86;
@@ -47,7 +48,9 @@ guide_back_wing_width = guide_front_width+(pin_spacing*(total_pins-1))+walls*3 -
 guide_back_wing_length = guide_back_length + zero_cut_root_depth + 5;
 shoulder_line = aligner_inset / 3;
 
-difference() {
+mirror_tab = tab_side == "right";
+
+mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
     union() {
         // Guide back - clips to Lishi pliers.
         translate([-walls, 0, -walls*2]) difference() {
@@ -83,7 +86,7 @@ difference() {
 }
 
 // Cover with alignment slot, depth bar and number.
-translate([-walls, 0, -walls*2]) difference() {
+mirror([mirror_tab ? 1 : 0, 0, 0]) translate([-walls, 0, -walls*2]) difference() {
     mirror([0, 1, 0]) cube([guide_front_width, guide_front_height, guide_front_length]);
 
     // Alignment.
@@ -94,5 +97,7 @@ translate([-walls, 0, -walls*2]) difference() {
     translate([-5, -key_slot_width, bar_push]) cube([lishi_socket_width*2, key_slot_width+1, 30]);
 
     // Number.
-    translate([guide_front_width/2, -guide_front_height+0.5, 2]) rotate([-90, 0, 180]) linear_extrude(1) text(str(depth_index+zero_cut_number), size=6, font="Arial", halign="center", valign="top");
+    translate([guide_front_width/2, -guide_front_height+0.5, 2]) rotate([-90, 0, 180]) {
+        mirror([mirror_tab ? 1 : 0, 0, 0]) linear_extrude(1) text(str(depth_index+zero_cut_number), size=6, font="Arial", halign="center", valign="top");
+    }
 }
