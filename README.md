@@ -6,9 +6,11 @@ This is a version of Deviant and Tony's [original
 work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
 on:
 
- - Providing a toolkit for generating guides for other formats
+ - Providing a toolkit for generating guides for other formats, including a
+   mirror-mode option to more warding profiles.
  - More forgiving geometry for cheaper 3D printers
- - An optional "wide" mode including a guide to help locate the shoulder for each pin
+ - An optional "wide" mode including a guide to help locate the shoulder for
+   each pin
 
 The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs
@@ -38,9 +40,10 @@ As per the variable at the top of the file, the script expects OpenSCAD to be
 installed in `C:\Program Files\OpenSCAD\openscad.exe`, update that as you
 need.
 
-Run it with arguments `generate.bat Schlage 8.509 0.381 5.86 10 0` where:
+Run it with arguments `generate.bat Schlage left 8.509 0.381 5.86 10 0` where:
 
  - `Schlage` is the key name/label for output files etc.
+ - `left` has the key coming in from the left, when mounted to the pliers.
  - `8.509` is the zero cut height, in mm.
  - `0.381` is the size of each step in depth, in mm.
  - `5.86` is the distance from pin 1 to the shoulder, in mm.
@@ -56,7 +59,7 @@ will add enough indents to help you align cuts for 6 pins without using the
 [Schlage Marker Sleeve.stl](references/Schlage%20Key%20Marker%20Sleeve.stl)
 (the spacing will be 3.96mm, for Schlage). This does compromise how compact
 the guides are, but may work for your use case. I've included the output of
-`generate.bat Schlage 8.509 0.381 5.86 10 0 wide 3.96 6` into the same
+`generate.bat Schlage left 8.509 0.381 5.86 10 0 wide 3.96 6` into the same
 [generated](generated/) folder.
 
 ### Linux
