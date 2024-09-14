@@ -75,6 +75,7 @@ As above, but with ./generate.sh ...
  - [ ] Horizontal cut to help keep key aligned with pin 6 etc?
  - [ ] Set file name to match depth code, instead of zero-based depth index.
  - [ ] "Known" configs for bump keys.
+ - [ ] Variable height holder for different thickness keys.
 
 ## Known good configurations
 
