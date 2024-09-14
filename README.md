@@ -1,7 +1,5 @@
 # LishiKeyCuttingGuides - Generation toolkit
 
-**NOTE: This is in development, I'll remove this banner once I've confirmed the geometry is absolutely correct.**
-
 This is a version of Deviant and Tony's [original
 work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
 on:
@@ -73,9 +71,10 @@ As above, but with ./generate.sh ...
 
 ## TODOs
 
- - [ ] Finger hook to remove?
+ - [ ] Finger hook - restore?
  - [ ] Horizontal cut to help keep key aligned with pin 6 etc?
  - [ ] Set file name to match depth code, instead of zero-based depth index.
+ - [ ] "Known" configs for bump keys.
 
 ## Known good configurations
 
