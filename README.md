@@ -7,10 +7,15 @@ work](https://github.com/deviantollam/LishiKeyCuttingGuides) that is focussed
 on:
 
  - Providing a toolkit for generating guides for other formats, including a
-   mirror-mode option to more warding profiles.
+   mirror-mode option to support warding that prefers cutting a key with the
+   bow on the right.
  - More forgiving geometry for cheaper 3D printers
  - An optional "wide" mode including a guide to help locate the shoulder for
    each pin
+
+The consequence of this flexibility is the loss of the included Schlage
+warding in the original project, which does reduce some of the alignment
+effect.
 
 The original repository's README is included [below](#the-original-readme),
 for more context and attribution, and I've kept their original reference STLs

@@ -19,7 +19,7 @@ pin_spacing = 3.96;
 total_pins = 6;
 
 // Lishi pliers dimensions.
-lishi_socket_width = 18 + 0.4;  // 0.4 from my printer, you may need to tweak.
+lishi_socket_width = 18 + 0.3;  // 0.3 from my printer, you may need to tweak.
 lishi_socket_height = 5;
 lishi_socket_length = 10;
 lishi_lip_length = 2;
