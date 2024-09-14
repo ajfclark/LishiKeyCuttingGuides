@@ -73,10 +73,15 @@ As above, but with ./generate.sh ...
 
 ## TODOs
 
- - [ ] Example command lines for proven configurations
  - [ ] Finger hook to remove?
  - [ ] Horizontal cut to help keep key aligned with pin 6 etc?
  - [ ] Set file name to match depth code, instead of zero-based depth index.
+
+## Known good configurations
+
+ - Schlage: `Schlage left 8.509 0.381 5.86 10 0` + `wide 3.96 6`
+ - Kwikset: `Kwikset left 8.8 0.59 6.27 8 1` + `wide 3.81 6`
+ - Lockwood: `Lockwood right 8.509 0.381 5.86 10 0` + `wide 3.96 6`
 
 ## The original README
 
