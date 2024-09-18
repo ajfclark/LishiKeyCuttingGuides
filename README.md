@@ -22,6 +22,8 @@ marker sleeve for pin positions.
 
 ## Images
 
+### Model
+
 These two images are the default and wide-mode generated versions (for 6-pin
 Schlage, as above):
 
@@ -30,6 +32,20 @@ Schlage, as above):
 And this is an example of the original reference STLs:
 
 ![](img/reference.png)
+
+### Prints
+
+Here are examples of the wide mode set of guides for Lockwood. A learning here
+is for depths 7-9 it's better to first do a 4 or 5 depth, then do the second
+one as the key cannot fit between the raised punch and the guide otherwise.
+Another learning was that the process bent the key slightly, and I suspect
+that additional support under the key (even a piece of paper) would have
+avoided this. The Lockwood profile doesn't have the blade all against one
+side, so the punching process can't help bend it.
+
+![](img/printed.jpg)
+
+![](img/lockwood.jpg)
 
 ## Generating guides
 
