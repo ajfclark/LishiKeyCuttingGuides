@@ -3,11 +3,12 @@ Command line config settings, for the key type, overridden by generate.bat
 
 The below default values are for Schlage.
 */
-tab_side = "left";
+tab_side = "right"; // [ left,right]
 zero_cut_root_depth = 8.509;
 depth_step = 0.381;
 pin_1_from_shoulder = 5.86;
-total_depths = 10;
+total_depths = 10; //1:10
+draw_all = false;
 depth_index = 9;
 zero_cut_number = 0;
 
@@ -50,8 +51,17 @@ shoulder_line = aligner_inset / 3;
 
 mirror_tab = tab_side == "right";
 
-mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
-    union() {
+if (draw_all) {
+	for (depth_index=[zero_cut_number:zero_cut_number+total_depths-1]) {
+		translate([0,15*depth_index,0])
+			guide(depth_index);
+	}
+}
+else {
+	guide(depth_index);
+}
+
+module guideback (){
         // Guide back - clips to Lishi pliers.
         translate([-walls, 0, -walls*2]) difference() {
             union() {
@@ -63,7 +73,8 @@ mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
 
             translate([walls,lishi_lip_thickness,walls*2]) cube([lishi_socket_width, guide_back_height, guide_back_length]);
         }
-
+}
+module lip() {
         // Lip.
         translate([-walls, 0, lishi_socket_length]) {
             cube([lip_width, lishi_lip_thickness, lishi_lip_length-lishi_lip_thickness]);
@@ -74,7 +85,9 @@ mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
                 mirror([0, 1, 0]) translate([-1, 0, -lishi_lip_thickness]) cube([lip_width+2, lishi_lip_thickness+1, lishi_lip_length+lishi_lip_thickness]);
             }
         }
-    }
+}
+
+module shoulderguides() {
     // Shoulder guides.
     translate([-walls, 0, -walls*2]) if (wide_mode) {
         for (i = [1 : total_pins-1]){
@@ -85,19 +98,48 @@ mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
     }
 }
 
-// Cover with alignment slot, depth bar and number.
-mirror([mirror_tab ? 1 : 0, 0, 0]) translate([-walls, 0, -walls*2]) difference() {
-    mirror([0, 1, 0]) cube([guide_front_width, guide_front_height, guide_front_length]);
+module lowerguide() {
+	mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
+		union() {
+			guideback();
+			lip();
+		}
 
+		shoulderguides();
+	}
+}
+
+module alignment() {
     // Alignment.
     translate([guide_back_width/2, -guide_front_height, guide_front_length]) sphere(r=aligner_inset);
-    
+}
+
+module depthbar(depth_index) {
     // Depth bar.
     bar_push = lishi_socket_punch_length - zero_cut_root_depth + (depth_index * depth_step) + walls*2;
     translate([-5, -key_slot_width, bar_push]) cube([lishi_socket_width*2, key_slot_width+1, 30]);
+}
 
+module number(depth_index) {
     // Number.
     translate([guide_front_width/2, -guide_front_height+0.5, 2]) rotate([-90, 0, 180]) {
         mirror([mirror_tab ? 1 : 0, 0, 0]) linear_extrude(1) text(str(depth_index+zero_cut_number), size=6, font="Arial", halign="center", valign="top");
     }
 }
+
+module cover(depth_index) {
+	// Cover with alignment slot, depth bar and number.
+	mirror([mirror_tab ? 1 : 0, 0, 0]) translate([-walls, 0, -walls*2]) difference() {
+		mirror([0, 1, 0]) cube([guide_front_width, guide_front_height, guide_front_length]);
+
+		alignment();
+		depthbar(depth_index);
+		number(depth_index);
+	}
+}
+
+module guide(depth_index) {
+	lowerguide();
+	cover(depth_index);
+}
+
