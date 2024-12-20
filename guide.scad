@@ -66,10 +66,15 @@ guide_front_height = key_slot_width + walls*2;
 guide_front_width = guide_back_width / 2 + pin_1_from_shoulder;
 
 lip_width = guide_back_width;
-
 guide_back_wing_width = guide_front_width+(pin_spacing*(Max_key_positions-1))+walls*3 - guide_back_width;
 guide_back_wing_length = guide_back_length + zero_cut_root_depth + 5;
 shoulder_line = aligner_inset / 3;
+
+echo("Walls:",walls);
+echo("Lishi socket length:",lishi_socket_length);
+echo("Lip Width: ",lip_width);
+echo("Lishi Lip thickness:",lishi_lip_thickness);
+echo("Lishi Lip Lengtyh:",lishi_lip_length);
 
 // Derived variables
 $fn = pow(2,Rendering_complexity);
@@ -126,8 +131,10 @@ module shoulderguides() {
 
 module lowerguide() {
 	mirror([mirror_tab ? 1 : 0, 0, 0]) difference() {
-		guideback();
-		lip();
+		union() {
+			guideback();
+			lip();
+		}
 		shoulderguides();
 	}
 }
