@@ -40,6 +40,10 @@ walls = 1;
 key_slot_width = 2.25; // 0.01
 cover_overlap = 2.14; // 0.01
 aligner_inset = 1;
+rail_depth=1; //0.01
+rail_height=1.4; //0.01
+rail_offset=0.76; //0.01
+rail_position=0; // [-1:bottom,0:none,1:top]
 
 /* [Printer and rendering config] */
 printer_allowance = 0.3;
@@ -157,14 +161,27 @@ module number(depth_index) {
     }
 }
 
+module alignmentrail(depth_index) {
+    bar_push = lishi_socket_punch_length - zero_cut_root_depth + (depth_index * depth_step) + walls*2;
+	rail_y = -rail_position * (rail_depth/2+key_slot_width/2-rail_depth) - key_slot_width/2;
+	if (rail_position != 0) {
+	    translate([guide_front_width/2, rail_y, bar_push+rail_offset+rail_offset])
+			cube([guide_front_width,rail_depth,rail_height],center=true);
+	}
+}
+
 module cover(depth_index) {
 	// Cover with alignment slot, depth bar and number.
-	mirror([mirror_tab ? 1 : 0, 0, 0]) translate([-walls, 0, -walls*2]) difference() {
-		mirror([0, 1, 0]) cube([guide_front_width, guide_front_height, guide_front_length]);
-
-		alignment();
-		depthbar(depth_index);
-		number(depth_index);
+	mirror([mirror_tab ? 1 : 0, 0, 0]) {
+		 translate([-walls, 0, -walls*2]) {
+			difference() {
+				mirror([0, 1, 0]) cube([guide_front_width, guide_front_height, guide_front_length]);
+				alignment();
+				depthbar(depth_index);
+				number(depth_index);
+			}
+			alignmentrail(depth_index);
+		}
 	}
 }
 
