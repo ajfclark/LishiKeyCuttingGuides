@@ -55,10 +55,12 @@ zero_cut_root_depth = Dimension_modifier * DOFC;
 depth_step = Dimension_modifier * Depth_increment;
 pin_1_from_shoulder = Dimension_modifier * TFC;
 pin_spacing = Dimension_modifier * BCC;
+epd = Dimension_modifier * EPD;
 echo("DOFC: ",zero_cut_root_depth);
 echo("Depth Increment: ",depth_step);
 echo("TFC: ",pin_1_from_shoulder);
 echo("BCC: ",pin_spacing);
+echo("EPD: ",epd);
 
 lishi_socket_width_w_allowance = lishi_socket_width + printer_allowance;
 guide_back_width = lishi_socket_width_w_allowance + walls*2;
@@ -163,10 +165,13 @@ module number(depth_index) {
 
 module alignmentrail(depth_index) {
     bar_push = lishi_socket_punch_length - zero_cut_root_depth + (depth_index * depth_step) + walls*2;
-	rail_y = -rail_position * (rail_depth/2+key_slot_width/2-rail_depth) - key_slot_width/2;
+	rail_y = -rail_position * key_slot_width/2 - key_slot_width/2;
 	if (rail_position != 0) {
-	    translate([guide_front_width/2, rail_y, bar_push+rail_offset+rail_offset])
-			cube([guide_front_width,rail_depth,rail_height],center=true);
+	    translate([0, rail_y, bar_push+rail_offset+rail_offset])
+			rotate([0,90,0])
+			linear_extrude(guide_front_width)
+			scale([rail_height,rail_depth*2])
+			circle(d=1);
 	}
 }
 
