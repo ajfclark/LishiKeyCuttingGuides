@@ -22,13 +22,13 @@ BCC = 0.156; //0.0001
 EPD=0.500; // 0.0001
 
 /* [Lishi plier dimensions] */
-lishi_socket_width = 18; // 0.01
+lishi_socket_width = 17.8; // 0.01
 lishi_socket_height = 5; // 0.01
-lishi_socket_length = 10; // 0.01
+lishi_socket_length = 9.5; // 0.01
 lishi_lip_length = 2; // 0.01
-lishi_lip_thickness = 1.2; // 0.01
+lishi_lip_thickness = 0.8; // 0.01
 // Tip of punch to end of lishi
-lishi_socket_punch_length = 13.415; //0.001
+lishi_socket_punch_length = 13.600; //0.001
 
 /* [Guide config] */
 tab_side = "left"; // [ left,right]
@@ -40,10 +40,10 @@ walls = 1;
 key_slot_width = 2.25; // 0.01
 cover_overlap = 2.14; // 0.01
 aligner_inset = 1;
-rail_depth=1; //0.01
+rail_depth=0.8; //0.01
 rail_height=1.4; //0.01
-rail_offset=0.76; //0.01
-rail_position=0; // [-1:bottom,0:none,1:top]
+rail_offset=0.90; //0.01
+rail_position=1; // [-1:bottom,0:none,1:top]
 
 /* [Printer and rendering config] */
 printer_allowance = 0.3;
@@ -80,7 +80,7 @@ echo("guide_front_width: ",guide_front_width);
 
 lip_width = guide_back_width;
 guide_back_wing_width = guide_front_width+(pin_spacing*(Max_key_positions-1))+walls*3 - guide_back_width;
-guide_back_wing_length = guide_back_length + zero_cut_root_depth + 5;
+guide_back_wing_length = guide_back_length + zero_cut_root_depth;
 shoulder_line = aligner_inset / 2;
 echo("lip_width: ",lip_width);
 echo("guide_back_wing_width: ",guide_back_wing_width);
@@ -141,9 +141,14 @@ module shoulderguides(depth_index) {
 				}
 			}
 		}
-		translate([guide_front_width,0,bar_push(depth_index)-shoulder_line/2])
-			rotate([0,90,0])
-				cylinder(d=shoulder_line, h=guide_back_wing_length+walls*2);
+		translate([guide_front_width,0,bar_push(depth_index)]) {
+			rotate([0,90,0]) {
+				translate([shoulder_line/2,0,0])
+					cylinder(d=shoulder_line, h=guide_back_wing_length+walls*2);
+				translate([-zero_cut_root_depth-shoulder_line/2,0,0])
+					cylinder(d=shoulder_line, h=guide_back_wing_length+walls*2);
+			}
+		}
     }
 }
 
