@@ -12,15 +12,15 @@
             "Rendering_complexity": "5",
             "TFC": "0.231",
             "aligner_inset": "1",
-            "cover_overlap": "2.14",
+            "cover_overlap": "3.5",
             "guide_to_render": "-1",
             "key_slot_width": "2.25",
             "lishi_lip_length": "2",
-            "lishi_lip_thickness": "1.2",
+            "lishi_lip_thickness": "0.8",
             "lishi_socket_height": "5",
-            "lishi_socket_length": "10",
-            "lishi_socket_punch_length": "13.415",
-            "lishi_socket_width": "18",
+            "lishi_socket_length": "9.5",
+            "lishi_socket_punch_length": "13.6",
+            "lishi_socket_width": "17.8",
             "printer_allowance": "0.3",
             "tab_side": "left",
             "walls": "1",
@@ -57,6 +57,5 @@
             "wide_mode": "true"
         }
     },
-    "parameterSets": "",
     "fileFormatVersion": "1"
 }
