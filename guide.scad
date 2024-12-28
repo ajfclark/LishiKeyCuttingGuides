@@ -56,36 +56,20 @@ depth_step = Dimension_modifier * Depth_increment;
 pin_1_from_shoulder = Dimension_modifier * TFC;
 pin_spacing = Dimension_modifier * BCC;
 epd = Dimension_modifier * EPD;
-echo("DOFC: ",zero_cut_root_depth);
-echo("Depth Increment: ",depth_step);
-echo("TFC: ",pin_1_from_shoulder);
-echo("BCC: ",pin_spacing);
-echo("EPD: ",epd);
 
 lishi_socket_width_w_allowance = lishi_socket_width + printer_allowance;
 guide_back_width = lishi_socket_width_w_allowance + walls*2;
 guide_back_length = lishi_socket_length + walls*2;
 guide_back_height = lishi_socket_height + lishi_lip_thickness;
-echo("lishi_socket_width_w_allowance: ",lishi_socket_width_w_allowance);
-echo("guide_back_width: ",guide_back_width);
-echo("guide_back_length: ",guide_back_length);
-echo("guide_back_height: ",guide_back_height);
 
 guide_front_length = lishi_socket_punch_length + walls*2 - zero_cut_root_depth + ((Number_of_cut_depths-1) * depth_step) + cover_overlap;
 guide_front_height = key_slot_width + walls*2;
 guide_front_width = guide_back_width / 2 + pin_1_from_shoulder;
-echo("guide_front_length: ",guide_front_length);
-echo("guide_front_height: ",guide_front_height);
-echo("guide_front_width: ",guide_front_width);
 
 lip_width = guide_back_width;
 guide_back_wing_width = guide_front_width+(pin_spacing*(Max_key_positions-1))+walls*3 - guide_back_width;
 guide_back_wing_length = guide_back_length + zero_cut_root_depth;
 shoulder_line = aligner_inset / 2;
-echo("lip_width: ",lip_width);
-echo("guide_back_wing_width: ",guide_back_wing_width);
-echo("guide_back_wing_length: ",guide_back_wing_length);
-echo("shoulder_line: ",shoulder_line);
 
 function bar_push(depth_index) = lishi_socket_punch_length - zero_cut_root_depth + (depth_index * depth_step) + walls*2;
 
