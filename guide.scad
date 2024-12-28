@@ -43,7 +43,7 @@ aligner_inset = 1;
 rail_depth=0.8; //0.01
 rail_height=1.4; //0.01
 rail_offset=0.90; //0.01
-rail_position=1; // [-1:bottom,0:none,1:top]
+rail_position=0; // [-1:bottom,0:none,1:top]
 
 /* [Printer and rendering config] */
 printer_allowance = 0.3;
