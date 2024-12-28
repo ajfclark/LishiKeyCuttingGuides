@@ -6,13 +6,18 @@ import itertools
 
 def render(parameters, guide_to_render, wide_mode):
     parameters['wide_mode'] = wide_mode
-    parameters['guide_to_render']=guide_to_render
+    parameters['guide_to_render']=str(guide_to_render)
+
     number = 'All' if guide_to_render == -1 else str(guide_to_render)
     filename='generated/' + parameterSet + (' Wide' if wide_mode == 'true' else '') + ' Cutter Guide - ' + number + '.stl'
-    cli = ['openscad','-o',filename,'-q']
+    cli = ['openscad','-o',filename]
     for parameter in parameters:
         cli.append('-D')
-        cli.append(parameter + '=' + str(parameters[parameter]))
+        value = parameters[parameter]
+        if value.isalpha():
+            value = '"' + value + '"'
+        cli.append(parameter + '=' + value)
+
     cli.append('guide.scad')
     print(cli)
     subprocess.run(cli)
