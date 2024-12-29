@@ -55,6 +55,32 @@
             "tab_side": "right",
             "walls": "1",
             "wide_mode": "true"
+        },
+        "Kwikset": {
+            "BCC": "0.150",
+            "DOFC": "0.328",
+            "Depth_increment": "0.023",
+            "Dimension_modifier": "25.4",
+            "EPD": "0.498",
+            "First_cut_designation": "1",
+            "Max_key_positions": "6",
+            "Number_of_cut_depths": "7",
+            "Rendering_complexity": "5",
+            "TFC": "0.247",
+            "aligner_inset": "1",
+            "cover_overlap": "3.5",
+            "guide_to_render": "-1",
+            "key_slot_width": "2.25",
+            "lishi_lip_length": "2",
+            "lishi_lip_thickness": "0.8",
+            "lishi_socket_height": "5",
+            "lishi_socket_length": "9.5",
+            "lishi_socket_punch_length": "13.6",
+            "lishi_socket_width": "17.8",
+            "printer_allowance": "0.3",
+            "tab_side": "left",
+            "walls": "1",
+            "wide_mode": "false"
         }
     },
     "fileFormatVersion": "1"
